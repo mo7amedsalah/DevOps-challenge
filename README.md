@@ -22,15 +22,21 @@ This repo is a DevOps challange  to deploy an application in Amazon EKS cluster.
 After these steps, AWS will provide you a Secret Access Key and Access Key ID. Save them preciously because this will be the only time AWS gives it to yo
 Configure AWS CLI to use your credentials
 
+![AWS_CLI](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2016-50-40.png)
+
 After you've done this, initalize your Terraform workspace, which will download the provider and initialize it with the values provided in the **terraform.tfvars** file by running 
 ```bash
 $ terraform init
 ``` 
 
+![TF_INIT](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2016-57-43.png)
+
 Provision your EKS cluster by running 
 ```bash
 $ terraform apply
 ```
+
+![TF_APPLY](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2017-47-09.png)
 
 ---
 
@@ -49,6 +55,8 @@ $ aws eks --region us-east-2 update-kubeconfig --name challenge-eks-oGMblHKa
 
 
 ** run `$ ansible-playbook roles.yaml`
+
+![roles](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2018-21-37.png)
 
 ** to see running pods
  
