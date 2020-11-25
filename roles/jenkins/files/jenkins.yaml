@@ -15,11 +15,20 @@ spec:
       labels:
         app: jenkins
     spec:
+      securityContext:
+        runAsUser: 0
+      volumes:
+      - name: docker-v 
+        hostPath: 
+          path: /var/run/docker.sock
       containers:
       - name: jenkins
-        image: jenkins/jenkins:lts
+        image: jenkins/jenkins:alpine
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - name: docker-v 
+          mountPath: /var/run/docker.sock
 
 ---
 apiVersion: v1
