@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploymentOfNexus
+  name: nexus-deployment
   namespace: test
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nexus
@@ -48,4 +48,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 808
+      targetPort: 8081

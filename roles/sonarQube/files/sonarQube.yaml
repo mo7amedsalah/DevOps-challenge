@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: deploymentOfSonarQube
+ name: sonarqube-deployment
  namespace: test
  labels:
     app: sonarqube
@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
      app: sonarqube
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:

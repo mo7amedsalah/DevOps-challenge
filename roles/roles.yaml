@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  roles:
+    - namespace
+    - jenkins
+    - nexus
+    - sonarQube

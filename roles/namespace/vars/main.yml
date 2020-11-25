@@ -1,0 +1,3 @@
+---
+# vars file for namespace
+kube_config: /home/salah/.kube/config

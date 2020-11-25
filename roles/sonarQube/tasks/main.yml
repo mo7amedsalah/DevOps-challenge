@@ -1,0 +1,7 @@
+---
+# tasks file for sonarQube
+- name: sonarQube_deployment
+  k8s:
+    state: present
+    kubeconfig: "{{ kube_config }}"
+    src: /home/salah/ITI/Ansible/DevOps-challenge/roles/sonarQube/files/sonarQube.yaml

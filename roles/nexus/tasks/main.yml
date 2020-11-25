@@ -1,0 +1,7 @@
+---
+# tasks file for jenkins
+- name: nexus_deployment
+  k8s:
+    state: present
+    kubeconfig: "{{ kube_config }}"
+    src: /home/salah/ITI/Ansible/DevOps-challenge/roles/nexus/files/nexus.yaml

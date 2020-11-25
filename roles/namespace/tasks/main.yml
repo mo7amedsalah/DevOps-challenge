@@ -1,0 +1,10 @@
+---
+# tasks file for namespace
+  - name: Create test namespace
+    k8s:
+      api_version: v1
+      definition:
+        kind: Namespace
+        metadata:
+          name: test
+      kubeconfig: "{{ kube_config }}"
