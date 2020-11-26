@@ -1,7 +1,0 @@
----
-    - hosts: localhost
-      tasks:
-        - name: deploy app
-          k8s:
-            state: present
-            src: ./app-deploymentfile.yaml
