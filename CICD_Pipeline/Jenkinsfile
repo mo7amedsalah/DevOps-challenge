@@ -42,7 +42,7 @@ pipeline {
            steps {
                script{
                  
-                   sh "ansible-playbook  ${WORKSPACE}/CICD_Pipeline/playbook.yaml"
+                   sh "ansible-playbook playbook.yaml"
                }
            }
        }
