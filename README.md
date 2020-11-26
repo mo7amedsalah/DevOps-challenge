@@ -177,7 +177,8 @@ sudo apt update && sudo apt install -y python3 && sudo apt install -y python3-pi
 ** Install docker CLI
 
 ** Create pipeline from jenkins dashboard
- -- Build The pipeline
+
+** Build The pipeline
  
 
 
