@@ -5,4 +5,4 @@
       state: present
       validate_certs: no
       namespace: test
-      src: CICD_Pipeline/deployment.yaml
+      src: deployment.yaml
