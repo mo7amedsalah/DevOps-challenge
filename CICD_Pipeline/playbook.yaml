@@ -4,4 +4,4 @@
         - name: deploy app
           k8s:
             state: present
-            src: /home/salah/ITI/Ansible/DevOps-challenge/CICD Pipeline/deployment.yaml
+            src: /home/salah/ITI/Ansible/DevOps-challenge/CICD_Pipeline/deployment.yaml

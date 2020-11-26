@@ -42,7 +42,7 @@ pipeline {
            steps {
                script{
                  
-                   sh "ansible-playbook playbook.yaml"
+                   sh 'ansible-playbook playbook.yaml'
                }
            }
        }
