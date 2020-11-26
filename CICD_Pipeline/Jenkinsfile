@@ -41,7 +41,7 @@ pipeline {
        stage ('Deploy') {
            steps {
                script{
-                 
+                   sh 'ls'
                    sh 'ansible-playbook playbook.yaml'
                }
            }
