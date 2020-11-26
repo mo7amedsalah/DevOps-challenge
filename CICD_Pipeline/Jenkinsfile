@@ -41,10 +41,8 @@ pipeline {
        stage ('Deploy') {
            steps {
                script{
-                   sh 'pwd'
-		   sh 'cd $ CICD_Pipeline'
-                   sh 'pwd'
-                   sh 'ansible-playbook playbook.yaml'
+                 
+                   sh 'ansible-playbook CICD_Pipeline/playbook.yaml'
                }
            }
        }
