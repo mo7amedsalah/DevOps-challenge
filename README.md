@@ -178,6 +178,15 @@ $ sudo apt update && sudo apt install -y python3 && sudo apt install -y python3-
 ```
 ** Install docker CLI
 
+** Install this plugins
+ 
+ - Docker Build
+ 
+ - Ansible
+ 
+ - 
+ 
+
 ** Create pipeline from jenkins dashboard
 
 ** Build The pipeline
