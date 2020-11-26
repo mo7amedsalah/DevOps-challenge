@@ -12,9 +12,11 @@ pipeline {
                sh 'cd ${GOPATH}/src'
                sh 'mkdir -p ${GOPATH}/src/hello-world'
                // Copy all files in our Jenkins workspace to our project directory.
-               sh 'ls ${WORKSPACE}'              
+               sh 'ls ${WORKSPACE}'     
+               sh 'cp -r ${WORKSPACE}/CICD_Pipeline/*.go ${GOPATH}/src/hello-world'
+               sh 'ls ${GOPATH}/src/hello-world'         
                // Build the app.
-               sh 'go build ${WORKSPACE}/CICD_Pipeline'              
+               sh 'go build'              
            }    
        }
        stage('Test') {
