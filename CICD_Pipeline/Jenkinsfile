@@ -38,8 +38,6 @@ pipeline {
            }
        }
        stage('Publish') {
-
-           }
            steps{
                script {
                    def appimage = docker.build "myapp" + ":$BUILD_NUMBER"
