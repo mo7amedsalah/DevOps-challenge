@@ -93,12 +93,34 @@ $ kubectl get svc -n test
 
 3)Implementation a CICD pipeline for any application using the tools and the platform implemented from the previous steps this pipeline should be using groovy scripting Jenkins file.
 
-1- Configure jenkins to create CI/CD pipeline
+** Configure jenkins to create CI/CD pipeline
 
 ```
 $ kubectl exec -n test pod name -- cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 ![initialpass](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2019-22-35.png)
 
---complete
+-Install plugins
+
+![install plugins](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2019-24-29.png)
+
+-Create user
+
+![create user](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2019-25-29.png)
+
+-Jenkins dashboard
+
+![dashboard](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2019-29-02.png)
+
+- Add credentials
+
+![credentials](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-26%2003-39-27.png)
+
+** Create jenkinsfile
+
+** Create pipeline
+
+
+
+
 
