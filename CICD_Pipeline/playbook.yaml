@@ -3,6 +3,5 @@
   - name: Deploy the application
     k8s:
       state: present
-      validate_certs: no
       namespace: test
       src: deployment.yaml
