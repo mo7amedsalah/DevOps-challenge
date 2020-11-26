@@ -184,7 +184,6 @@ $ sudo apt update && sudo apt install -y python3 && sudo apt install -y python3-
  
  - Ansible
  
- - 
  
 
 ** Create pipeline from jenkins dashboard
