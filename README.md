@@ -31,12 +31,19 @@ $ terraform init
 
 ![TF_INIT](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2016-57-43.png)
 
+
+
 Provision your EKS cluster by running 
 ```bash
 $ terraform apply
 ```
 
 ![TF_APPLY](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2017-47-09.png)
+
+
+In Console : 
+![console](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2017-48-15.png)
+![console](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2017-49-03.png)
 
 ---
 
@@ -59,18 +66,30 @@ $ aws eks --region us-east-2 update-kubeconfig --name challenge-eks-oGMblHKa
 ![roles](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2018-21-37.png)
 
 ** to see running pods
- 
+
 ```
 $ kubectl get po  -n test
 ```
+![pods](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2018-23-27.png)
 
 To show services find it by
 
 ```
 $ kubectl get svc -n test
 ```
+![services](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2019-10-02.png)
 
-** By Eternal -IP you can access all services
+** By External -IP you can access all services
+
+-jenkins
+![jenkins](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2018-25-46.png)
+
+-Nexus
+![nexus](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2018-47-21.png)
+
+-SonarQube
+![sonarqube](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-26%2000-20-40.png)
+
 
 3)Implementation a CICD pipeline for any application using the tools and the platform implemented from the previous steps this pipeline should be using groovy scripting Jenkins file.
 
@@ -79,4 +98,7 @@ $ kubectl get svc -n test
 ```
 $ kubectl exec -n test pod name -- cat /var/jenkins_home/secrets/initialAdminPassword
 ```
+![initialpass](https://github.com/mo7amedsalah/DevOps-challenge/blob/main/images/Screenshot%20from%202020-11-25%2019-22-35.png)
+
+--complete
 
