@@ -124,7 +124,7 @@ pipeline {
    stages {
        stage('Build') {
            agent {
-               any {
+               docker {
                    image 'golang'
                }
            }
@@ -132,15 +132,17 @@ pipeline {
                // Create our project directory.
                sh 'cd ${GOPATH}/src'
                sh 'mkdir -p ${GOPATH}/src/hello-world'
-               // Copy all files in our Jenkins workspace to our project directory.               
-               sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
+               // Copy all files in our Jenkins workspace to our project directory.
+               sh 'ls ${WORKSPACE}'     
+               sh 'cp -r ${WORKSPACE}/CICD_Pipeline/*.go ${GOPATH}/src/hello-world'
+               sh 'ls ${GOPATH}/src/hello-world'         
                // Build the app.
                sh 'go build'              
            }    
        }
        stage('Test') {
            agent {
-               any {
+               docker {
                    image 'golang'
                }
            }
@@ -149,19 +151,19 @@ pipeline {
                sh 'cd ${GOPATH}/src'
                sh 'mkdir -p ${GOPATH}/src/hello-world'
                // Copy all files in our Jenkins workspace to our project directory.               
-               sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
+	       sh 'cp -r ${WORKSPACE}/CICD_Pipeline/*.go ${GOPATH}/src/hello-world'
                // Remove cached test results.
                sh 'go clean -cache'
                // Run Unit Tests.
-               sh 'go test ./... -v -short'           
+               sh 'go test ./main_test.go'           
            }
        }
  
        stage ('Deploy') {
            steps {
                script{
-                   def image_id = registry + ":$BUILD_NUMBER"
-                   sh "ansible-playbook  playbook.yaml --extra-vars \"image_id=${image_id}\""
+                 
+                   sh 'ansible-playbook CICD_Pipeline/playbook.yaml'
                }
            }
        }
@@ -171,7 +173,7 @@ pipeline {
 ```
 ** Install Python 3, Ansible, and the openshift module on jenkins :
 ```
-sudo apt update && sudo apt install -y python3 && sudo apt install -y python3-pip && sudo pip3 install ansible && sudo pip3 install openshift
+$ sudo apt update && sudo apt install -y python3 && sudo apt install -y python3-pip && sudo pip3 install ansible && sudo pip3 install openshift
 
 ```
 ** Install docker CLI
