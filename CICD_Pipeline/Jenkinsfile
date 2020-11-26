@@ -37,12 +37,25 @@ pipeline {
                sh 'go test ./main_test.go'           
            }
        }
+       stage('Publish') {
+
+           }
+           steps{
+               script {
+                   def appimage = docker.build "myapp" + ":$BUILD_NUMBER"
+
+               }
+           }
+       }
+
+
+
  
        stage ('Deploy') {
            steps {
                script{
-                 
-                   sh 'ansible-playbook CICD_Pipeline/playbook.yaml'
+                   def image_id = "myapp" + ":$BUILD_NUMBER"
+                   sh 'ansible-playbook CICD_Pipeline/playbook.yaml --extra-vars \"image_id=${image_id}\"'
                }
            }
        }

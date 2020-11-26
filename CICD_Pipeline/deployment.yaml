@@ -9,7 +9,6 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 32000
   type: LoadBalancer
 
 ---
@@ -17,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-deployment
+  namespace: test
   labels:
     role: app
 spec:
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: ""
+        image: "${image}"
         resources:
           requests:
             cpu: 10m
