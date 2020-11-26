@@ -6,4 +6,3 @@
       validate_certs: no
       namespace: test
       src: CICD_Pipeline/deployment.yaml
-      definition: ""
