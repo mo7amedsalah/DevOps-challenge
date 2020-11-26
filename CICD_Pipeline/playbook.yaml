@@ -4,5 +4,5 @@
     k8s:
       state: present
       validate_certs: no
-      namespace: default
+      namespace: test
       definition: ""
